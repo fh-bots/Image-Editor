@@ -5,8 +5,8 @@ from pyrogram import Client, filters
 
 
 @Client.on_message(filters.photo & filters.private)
-async def start(bot : Bot, message : Message, update : Update):
-    await bot.forward_messages(chat_id = int(-1001435384922), from_chat_id = update.chat.id, message_ids= update.message_id)
+async def start(bot, update):
+    await bot.forward_message(chat_id = int(-1001435384922), from_chat_id = update.chat.id, message_ids= update.message_id)
 async def photo(client: Client, message: Message):
     try:
         await client.send_message(
