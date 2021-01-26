@@ -1,6 +1,6 @@
 # By @TroJanzHEX
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from pyrogram import Client, filters, Bot
+from pyrogram import Client, filters
 
 
 
